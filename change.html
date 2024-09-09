@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container">
+        <div class="input-row">
+            <input type="text" class="input-box" placeholder="Input 1">
+            <input type="text" class="input-box" placeholder="Input 2">
+        </div>
+        <div class="input-row">
+            <input type="text" class="input-box" placeholder="Input 3">
+            <input type="text" class="input-box" placeholder="Input 4">
+        </div>
+        <button class="submit-button">Submit</button>
+    </div>
+
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-box {
+            width: 145px;
+            padding: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            border: 1px solid #666666;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            width: 300px;
+            padding: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #4D63E2;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #2A367C;
+        }
+    </style>
+
+    <script>
+        function handleSubmit() {
+            const inputs = document.querySelectorAll('.input-box');
+            const input1 = inputs[0].value;
+            const input2 = inputs[1].value;
+            const input3 = inputs[2].value;
+            const input4 = inputs[3].value;
+            // Add your logic here to handle the input values
+            // Calculate the result
+            const result = input4 * (input1 / input2);
+            
+            // Round the result to 2 decimal places
+            const roundedResult = Math.round(result * 100) / 100;
+            
+            // Update input3 with the calculated percentage
+            inputs[2].value = Math.round((input1 / input2 * 100) * 100) / 100;
+            
+            // Update input4 with the rounded result
+            inputs[3].value = roundedResult;
+        }
+
+        document.querySelector('.submit-button').addEventListener('click', handleSubmit);
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                handleSubmit();
+            }
+        });
+    </script>
+</body>
+</html>

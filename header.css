@@ -1,0 +1,45 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.nav{
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 7.1%;
+    margin-right: 7.1%;
+}
+.logo-text{
+    font-family: 'Righteous', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0.015em;
+    text-align: left;
+    color: #2A367C;
+}
+.nav-list{
+    display: flex;
+    justify-content: flex-end;
+}
+.nav ul li a{
+    padding: 20.5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    text-align: left;
+    color: #666666;
+}
+.nav ul li a:hover{
+    border-bottom: 3px solid #4d63e3;
+    color: #4d63e3;
+}
+.active{
+    border-bottom: 3px solid #4d63e3;
+    color: #4d63e3;
+}
